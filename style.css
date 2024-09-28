@@ -20,6 +20,7 @@ body {
   overflow: scroll;
 }
 
+
 .container {
   background-color: rgb(92, 173, 169);
   padding: 30px;
@@ -103,6 +104,8 @@ ul.nested.open {
   max-height: 1000px; /* Set a large enough value to accommodate the content */
   transition: max-height 1s ease-in;
 }
+
+
 
 @keyframes fadeIn {
   from { opacity: 0; }
