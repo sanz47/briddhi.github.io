@@ -1,108 +1,110 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: auto;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: whitesmoke;
-    color: rgb(92, 173, 169);
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeIn 1.5s ease forwards;
-  }
-  
-  .container {
-    background-color: rgb(92, 173, 169);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-  }
-  
-  header h1 {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    color: rgb(241, 209, 71);;
-    margin-bottom: 20px;
-    transition: all 0.5s ease;
-  }
-  
-  /* Tree Structure */
-  ul.tree {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  ul.tree li {
-    margin: 10px 0;
-  }
-  
-  .folder {
-    font-weight: 500;
-    color: rgb(241, 209, 71);;
-    cursor: pointer;
-    position: relative;
-    padding-left: 20px;
-    display: inline-block;
-    transition: color 0.3s ease;
-  }
-  
-  .folder::before {
-    content: "📁";
-    position: absolute;
-    left: 0;
-    top: 0;
-    
-    transition: transform 0.3s ease;
-  }
-  
-  .folder:hover {
-    color: #fff;
-  }
-  
-  a {
-    text-decoration: none;
-    color: rgb(241, 209, 71);
-    font-weight: 500;
-    display: block;
-    padding-left: 20px;
-    transition: all 0.3s ease;
-  }
-  
-  a:hover {
-    color: #fff;
-  }
-  
-  a::before {
-    content: "🔗";
-    margin-right: 5px;
-    color: rgb(241, 209, 71);;
-  }
-  
-  /* Nested list transition */
-  ul.nested {
-    display: none;
-    list-style-type: none;
-    padding-left: 20px;
-    border-left: 2px solid #ccc;
-  }
-  
-  ul.nested.open {
-    display: block;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: whitesmoke;
+  color: rgb(92, 173, 169);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  overflow: scroll;
+}
+
+.container {
+  background-color: rgb(92, 173, 169);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgb(241, 209, 71);
+  margin-bottom: 20px;
+  transition: all 1s ease;
+}
+
+/* Tree Structure */
+ul.tree {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.tree li {
+  margin: 10px 0;
+}
+
+.folder {
+  font-weight: 500;
+  color: rgb(241, 209, 71);
+  cursor: pointer;
+  position: relative;
+  padding-left: 20px;
+  display: inline-block;
+  transition: color 1s ease;
+}
+
+.folder::before {
+  content: "📁";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 0.5s ease;
+}
+
+.folder:hover {
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(241, 209, 71);
+  font-weight: 500;
+  display: block;
+  padding-left: 20px;
+  transition: all 0.5s ease;
+}
+
+a:hover {
+  color: #fff;
+}
+
+a::before {
+  content: "🔗";
+  margin-right: 5px;
+  color: rgb(241, 209, 71);
+}
+
+/* Nested list transition */
+ul.nested {
+  max-height: 0;
+  overflow: hidden;
+  list-style-type: none;
+  padding-left: 20px;
+  border-left: 2px solid #ccc;
+  transition: max-height 0.5s ease-out;
+}
+
+ul.nested.open {
+  max-height: 1000px; /* Set a large enough value to accommodate the content */
+  transition: max-height 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
