@@ -68,7 +68,7 @@
   }
   
   .folder:hover {
-    color: #ff6347;
+    color: #fff;
   }
   
   a {
@@ -81,7 +81,7 @@
   }
   
   a:hover {
-    color: #ff6347;
+    color: #fff;
   }
   
   a::before {
