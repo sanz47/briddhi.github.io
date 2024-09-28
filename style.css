@@ -1,4 +1,4 @@
-/* Reset some basic styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,51 +6,102 @@
   }
   
   body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    background: whitesmoke;
+    color: rgb(92, 173, 169);
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
   }
   
-  header {
+  .container {
+    background-color: rgb(92, 173, 169);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  header h1 {
     text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(241, 209, 71);;
     margin-bottom: 20px;
+    transition: all 0.5s ease;
   }
   
-  h1 {
-    font-size: 2em;
-    color: #333;
-  }
-  
+  /* Tree Structure */
   ul.tree {
     list-style: none;
-  }
-  
-  ul.tree ul {
-    margin-left: 20px;
-    padding-left: 20px;
-    border-left: 2px solid #888;
+    padding-left: 0;
   }
   
   ul.tree li {
     margin: 10px 0;
   }
   
-  ul.tree a {
-    text-decoration: none;
-    color: #3498db;
-    font-weight: bold;
-  }
-  
-  ul.tree a:hover {
-    text-decoration: underline;
-  }
-  
   .folder {
-    font-weight: bold;
-    color: #2c3e50;
+    font-weight: 500;
+    color: rgb(241, 209, 71);;
     cursor: pointer;
+    position: relative;
+    padding-left: 20px;
+    display: inline-block;
+    transition: color 0.3s ease;
   }
   
   .folder::before {
-    content: "📂 ";
+    content: "📁";
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    transition: transform 0.3s ease;
+  }
+  
+  .folder:hover {
+    color: #ff6347;
+  }
+  
+  a {
+    text-decoration: none;
+    color: rgb(241, 209, 71);
+    font-weight: 500;
+    display: block;
+    padding-left: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  a:hover {
+    color: #ff6347;
+  }
+  
+  a::before {
+    content: "🔗";
+    margin-right: 5px;
+    color: rgb(241, 209, 71);;
+  }
+  
+  /* Nested list transition */
+  ul.nested {
+    display: none;
+    list-style-type: none;
+    padding-left: 20px;
+    border-left: 2px solid #ccc;
+  }
+  
+  ul.nested.open {
+    display: block;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
