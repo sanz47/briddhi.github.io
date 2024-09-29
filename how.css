@@ -6,21 +6,38 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f0f5f4;
-  color: #333;
+  background: whitesmoke;
+  color: rgb(92, 173, 169);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  opacity: 1;
+  animation: fadeIn 1s ease forwards; /* Smooth fade-in */
+  overflow: scroll;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .container {
-  width: 90%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 0;
+  transition: transform 0.5s ease; /* Smooth transition on container */
 }
 
 h1 {
   text-align: center;
   margin-bottom: 50px;
   color: rgb(92, 173, 169);
+  transition: color 0.5s ease; /* Smooth color transition on h1 */
 }
 
 .flowchart-section {
@@ -37,19 +54,21 @@ h1 {
   width: 48%;
   overflow: hidden;
   position: relative;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effect */
+  cursor: pointer;
 }
 
 .flowchart-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .flowchart-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out; /* Smooth image opacity transition */
 }
 
 .flowchart-card:hover img {
@@ -60,7 +79,7 @@ h1 {
   padding: 20px;
   background-color: rgb(241, 209, 71);
   color: rgb(92, 173, 169);
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth color transition on hover */
 }
 
 .flowchart-card:hover .flowchart-description {
@@ -71,9 +90,126 @@ h1 {
 .flowchart-description h2 {
   margin-bottom: 10px;
   font-size: 20px;
+  transition: font-size 0.5s ease; /* Smooth font size transition */
 }
 
 .flowchart-description p {
   font-size: 14px;
   line-height: 1.6;
+  transition: all 0.3s ease; /* Smooth paragraph transition */
+}
+
+/* Modal Styles */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8); 
+  transition: opacity 0.5s ease; /* Smooth modal transition */
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth close button transition */
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.portfolio {
+  text-align: left;
+  padding-left: 40px;
+  font-size: 35px;
+  padding-top: 2px;
+  font-weight: 700;
+  color: rgb(241, 209, 71); 
+  position: inherit;
+  transition: color 0.7s ease, font-size 0.7s ease; /* Smooth color and font-size transition */
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: rgb(92, 173, 169); 
+  padding: 4px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 5px;
+  text-align: right;
+  transition: background-color 0.7s ease; /* Smooth background color transition */
+}
+
+.navbar a {
+  display: inline-block;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  color: rgb(241, 209, 71);
+  transition: background-color 0.7s ease, color 0.5s ease; 
+  border-radius: 13px;
+}
+
+.navbar a:hover {
+  background-color: rgb(45, 128, 123); 
+  color: white;
+  cursor: pointer; 
+}
+
+.navbar a.active {
+  background-color: rgb(45, 128, 123);
+  color: white;
+  border-radius: 13px; 
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgb(241, 209, 71);
+  margin-bottom: 20px;
+  transition: all 1s ease;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(241, 209, 71);
+  font-weight: 500;
+  display: block;
+  padding-left: 20px;
+  transition: all 0.5s ease; 
+}
+
+a:hover {
+  color: #fff;
+}
+
+a::before {
+  margin-right: 5px;
+  color: rgb(241, 209, 71);
 }
